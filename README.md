@@ -20,7 +20,9 @@
 > Word-by-word **Lyric Glow** highlight (off by default — enable anytime in **Subtitle Style 🎨**) with customizable speed (`0.5x–2.0x`), font sizes, colors, and clean Starlight layout.
 
 
-https://github.com/user-attachments/assets/64987e96-8f42-4e02-b8bb-1e8b40a2cd92
+
+https://github.com/user-attachments/assets/dafef482-2be7-48c5-a160-2531abe5b9be
+
 
 
 ---
