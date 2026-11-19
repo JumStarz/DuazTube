@@ -1,12 +1,29 @@
-# DuazTube - Phụ Đề Song Ngữ & Dịch AI cho YouTube & Bilibili
+<div align="center">
 
-🌐 **Ngôn ngữ:** [English](README.md) | **Tiếng Việt**
+# ✦ DuazTube
+
+**Phụ Đề Song Ngữ, Tra Từ Ngữ Cảnh & Dịch AI cho YouTube và Bilibili**
+
+🌐 [English](README.md) | **Tiếng Việt**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Browser: Firefox](https://img.shields.io/badge/Firefox-109%2B-orange.svg)](https://www.mozilla.org/firefox/)
 [![Browser: Chromium](https://img.shields.io/badge/Chromium-Chrome%20%7C%20Edge%20%7C%20Brave-brightgreen.svg)](https://www.chromium.org/)
 
-**DuazTube** là tiện ích mở rộng mã nguồn mở nhẹ mượt dành cho **Firefox** và **Chromium** (Chrome, Edge, Brave, Cốc Cốc), hỗ trợ học ngoại ngữ trên **YouTube** và **Bilibili**. Tiện ích hiển thị phụ đề song ngữ tùy biến, tra từ nhanh theo ngữ cảnh và dịch thuật thông minh mà vẫn giữ nguyên sự gọn gàng của giao diện video gốc.
+</div>
+
+---
+
+## Xem trước (Preview)
+
+### Phụ đề song ngữ & Hiệu ứng Lyric Glow
+> Hiệu ứng phát sáng chạy từng từ **Lyric Glow** (mặc định tắt — bật tùy ý trong **Giao diện phụ đề 🎨**) hỗ trợ chỉnh tốc độ (`0.5x–2.0x`), cỡ chữ, màu sắc và vị trí linh hoạt.
+
+
+https://github.com/user-attachments/assets/a268ee68-5991-4e60-9e3d-34836ff29962
+
+
+---
 
 ## Tính năng chính
 - **Hỗ trợ YouTube & Bilibili**: Chỉ hoạt động trên các trang xem video (`youtube.com/watch`, `bilibili.com/video/*`, `bilibili.com/bangumi/play/*`). Toàn bộ bảng điều khiển nằm gọn trong Popup thanh công cụ và trang Dashboard (`options.html`).
@@ -43,3 +60,4 @@ DuazTube là công cụ học tập mã nguồn mở độc lập, không liên 
 
 ## Giấy phép
 Phát hành theo giấy phép [MIT License](LICENSE).
+
