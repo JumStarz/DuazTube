@@ -1,12 +1,29 @@
-# DuazTube - Dual Subtitles & AI Translator for YouTube & Bilibili
+<div align="center">
 
-🌐 **Language:** **English** | [Tiếng Việt](README.vi.md)
+# ✦ DuazTube
+
+**Dual Subtitles, Contextual Lookup & AI Translator for YouTube and Bilibili**
+
+🌐 **English** | [Tiếng Việt](README.vi.md)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Browser: Firefox](https://img.shields.io/badge/Firefox-109%2B-orange.svg)](https://www.mozilla.org/firefox/)
 [![Browser: Chromium](https://img.shields.io/badge/Chromium-Chrome%20%7C%20Edge%20%7C%20Brave-brightgreen.svg)](https://www.chromium.org/)
 
-**DuazTube** is a lightweight, open-source browser extension for **Firefox** and **Chromium** (Chrome, Edge, Brave, Cốc Cốc) designed for learning languages on **YouTube** and **Bilibili**. It displays customizable dual subtitles, instant contextual word lookup, optional word-by-word Lyric Glow effects, and AI-powered translation without cluttering the video player's native layout.
+</div>
+
+---
+
+## Preview
+
+### Lyric Glow & Dual Subtitles in Action
+> Word-by-word **Lyric Glow** highlight (off by default — enable anytime in **Subtitle Style 🎨**) with customizable speed (`0.5x–2.0x`), font sizes, colors, and clean Starlight layout.
+
+
+https://github.com/user-attachments/assets/64987e96-8f42-4e02-b8bb-1e8b40a2cd92
+
+
+---
 
 ## Key Features
 - **YouTube & Bilibili Support**: Runs exclusively on video watch pages (`youtube.com/watch`, `bilibili.com/video/*`, `bilibili.com/bangumi/play/*`). All controls live neatly inside the toolbar Popup & full-page Dashboard (`options.html`).
