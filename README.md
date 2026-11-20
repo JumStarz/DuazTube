@@ -27,20 +27,23 @@ https://github.com/user-attachments/assets/dafef482-2be7-48c5-a160-2531abe5b9be
 
 ---
 
-## Key Features
-- **YouTube & Bilibili Support**: Runs exclusively on video watch pages (`youtube.com/watch`, `bilibili.com/video/*`, `bilibili.com/bangumi/play/*`). All controls live neatly inside the toolbar Popup & full-page Dashboard (`options.html`).
-- **Synced Music Lyrics (LRCLIB)**: Fetch accurate, time-synced song lyrics directly from **LRCLIB** (100% free, no API key required) with one click (`🎵`), manual song search, and instant timing offset adjustment (`-1s` / `-0.5s` / `0s` / `+0.5s` / `+1s`) without re-translating — eliminating YouTube auto-caption mishearings on music videos.
-- **Smart Subtitle Processing**: Automatically cleans `[Music]`/`♪` tags, fixes split contractions, merges broken fragments into natural, readable sentences, and prioritizes translating the segment you are currently watching for instant playback.
-- **Multiple Translators**:
-  - **Free / No-Key**: Google Translate (context-aware & batch POST), Bing / Microsoft Translator, MyMemory.
-  - **AI Models (BYOK / Local)**: Google Gemini, Groq (Llama 3.3), Ollama (100% offline/local), and Custom OpenAI-compatible endpoints (OpenRouter, DeepSeek, etc.) with context-aware prompts that automatically infer and correct auto-caption (ASR) mistakes.
-- **Interactive Learning & Shortcuts**:
-  - Click any word on the subtitle to pause, translate, view phonetics & AI context explanation, listen to pronunciation (`🔊`), and save to Vocabulary (`☆` → export `.CSV` for Anki).
-  - Shortcuts: `A` (Previous), `S` (Play/Pause/Replay), `D` (Next), plus **Auto-pause** and **Loop** modes.
-- **Customizable Appearance & Lyric Glow**: Adjust font sizes, colors, background opacity, bottom offset, max width (up to 98%), and toggle **Lyric Glow** word-by-word highlight (off by default) with adjustable speed (`0.5x-2.0x`).
-- **For Videos Without Subtitles**: Real-time **AI Whisper** speech-to-text (Groq / Local) and local `.SRT`/`.VTT` file import.
-- **Subtitle Export**: Download subtitles directly in `.SRT` (Dual / Original / Translation), `.VTT`, or `.TXT` formats.
-- **Multi-language UI**: Supports **Tiếng Việt**, **English**, and **简体中文**.
+## Popup Controls & Icons Guide
+
+| Button / Icon | Function |
+| :--- | :--- |
+| **On / Off** | Quickly show or hide the dual subtitle overlay on the video. |
+| **Auto-pause** | Automatically pauses the video at the end of every subtitle line (great for listening & shadowing). |
+| **Loop** | Continuously repeats the current subtitle line until turned off. |
+| `⏮ Prev (A)` / `⏯ Play/Replay (S)` / `Next (D) ⏭` | Jump to the previous/next line or play/pause/replay the current line (works with keyboard shortcuts `A`, `S`, `D`). |
+| `🎵` | Fetch accurate, time-synced song lyrics from **LRCLIB** (free, no key), search songs manually, and adjust timing offset (`-1s` / `-0.5s` / `0s` / `+0.5s` / `+1s`) for MVs with intros. |
+| `🎙 AI Sub` | Start/stop real-time **AI Whisper** speech-to-text for videos without subtitles. |
+| `📂` | Import a local `.SRT` or `.VTT` subtitle file from your computer. |
+| `🎨` | Customize subtitle appearance (Dual/Original/Translation mode, font sizes, colors, background opacity, bottom position, max width, and **Lyric Glow**). |
+| `⚙️` | Open the full Settings & Dashboard page (API keys, target language, custom AI prompt, saved vocabulary list & Anki `.CSV` export, UI language). |
+| `⬇` | Download the current subtitles as `.SRT` (Dual / Original / Translation), `.VTT`, or `.TXT`. |
+| `🔄` | Force re-translate all subtitles of the current video. |
+
+> **Tip (On-video Dictionary):** Click any word directly on the subtitle to look it up, click `🔊` to hear pronunciation, or click `☆` (`★`) to save it to your Vocabulary list.
 
 ## Installation
 ### From Releases (Recommended)
