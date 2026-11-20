@@ -25,20 +25,23 @@ https://github.com/user-attachments/assets/a268ee68-5991-4e60-9e3d-34836ff29962
 
 ---
 
-## Tính năng nổi bật
-- **Hỗ trợ YouTube & Bilibili**: Chỉ hoạt động trên trang xem video (`youtube.com/watch`, `bilibili.com/video/*`, `bilibili.com/bangumi/play/*`). Mọi điều khiển được gói gọn trong Popup thanh công cụ và Bảng điều khiển (`options.html`).
-- **Lời bài hát đồng bộ chuẩn (LRCLIB)**: Tải lời bài hát chính xác kèm mốc thời gian từ **LRCLIB** (miễn phí 100%, không cần API Key) chỉ với 1 bấm (`🎵`), hỗ trợ tìm bài thủ công và chỉnh lệch giờ tức thì (`-1s` / `-0.5s` / `0s` / `+0.5s` / `+1s`) cho MV có đoạn intro mà không cần dịch lại — khắc phục triệt để lỗi phụ đề tự động YouTube nghe nhầm lời nhạc.
-- **Xử lý phụ đề thông minh**: Tự động lọc ký tự `[Music]`/`♪`, nối lại các từ viết tắt bị tách rời, gộp đoạn ngắn thành câu tự nhiên dễ đọc và ưu tiên dịch ngay đoạn đang phát để hiển thị gần như tức thì.
-- **Đa dạng trình dịch**:
-  - **Miễn phí / Không cần Key**: Google Translate (dịch theo lô POST), Bing / Microsoft Translator, MyMemory.
-  - **Mô hình AI (BYOK / Local)**: Google Gemini, Groq (Llama 3.3), Ollama (chạy offline hoàn toàn trên máy), và API tương thích OpenAI (OpenRouter, DeepSeek...) đi kèm prompt tối ưu giúp AI tự hiểu ngữ cảnh và sửa lỗi nghe nhầm từ phụ đề tự động.
-- **Học ngoại ngữ tương tác & Phím tắt**:
-  - Bấm vào bất kỳ từ nào trên phụ đề để tự dừng video, tra nghĩa, xem phiên âm, giải thích ngữ cảnh bằng AI, nghe phát âm (`🔊`) và lưu vào sổ từ vựng (`☆` → xuất `.CSV` nạp vào Anki).
-  - Phím tắt: `A` (Câu trước), `S` (Phát/Dừng/Lặp lại), `D` (Câu sau), kèm chế độ **Tự dừng cuối câu** và **Lặp câu**.
-- **Tùy chỉnh giao diện & Hiệu ứng Lyric Glow**: Tùy chỉnh cỡ chữ, màu sắc, độ mờ nền, vị trí từ đáy, độ rộng tối đa (lên tới 98%) và bật hiệu ứng sáng từng chữ **Lyric Glow** (mặc định tắt) với tốc độ tùy chỉnh (`0.5x–2.0x`).
-- **Cho video không có phụ đề**: Tạo phụ đề trực tiếp bằng **AI Whisper** (Groq / Local) hoặc nạp file `.SRT`/`.VTT` từ máy.
-- **Xuất phụ đề**: Tải xuống trực tiếp dưới dạng `.SRT` (Song ngữ / Ngoại ngữ / Bản dịch), `.VTT`, hoặc `.TXT`.
-- **Đa ngôn ngữ giao diện**: Hỗ trợ **Tiếng Việt**, **English**, và **简体中文**.
+## Hướng dẫn các nút & biểu tượng trong Popup
+
+| Nút / Biểu tượng | Chức năng |
+| :--- | :--- |
+| **Bật / Tắt** | Bật hoặc ẩn nhanh khung phụ đề song ngữ trên video. |
+| **Tự dừng** | Tự động dừng video ở cuối mỗi câu phụ đề (rất tiện để luyện nghe & nhại theo/shadowing). |
+| **Lặp câu** | Tự động lặp đi lặp lại câu phụ đề hiện tại cho đến khi tắt. |
+| `⏮ Trước (A)` / `⏯ Phát/Lặp (S)` / `Sau (D) ⏭` | Chuyển nhanh về câu trước, phát/dừng/nghe lại câu hiện tại hoặc nhảy sang câu kế tiếp (hỗ trợ phím tắt `A`, `S`, `D`). |
+| `🎵` | Tải lời bài hát chuẩn kèm mốc thời gian từ **LRCLIB** (miễn phí, không cần Key), tìm tên bài thủ công và chỉnh lệch giờ (`-1s` / `-0.5s` / `0s` / `+0.5s` / `+1s`) cho MV có đoạn intro. |
+| `🎙 AI Sub` | Bật/tắt tạo phụ đề trực tiếp bằng **AI Whisper** cho video không có phụ đề sẵn. |
+| `📂` | Nạp file phụ đề `.SRT` hoặc `.VTT` có sẵn từ máy tính. |
+| `🎨` | Tùy chỉnh giao diện phụ đề (chế độ song ngữ/đơn ngữ, cỡ chữ, màu chữ, độ mờ nền, vị trí từ đáy, độ rộng tối đa và hiệu ứng **Lyric Glow**). |
+| `⚙️` | Mở trang Cài đặt & Quản lý đầy đủ (nhập API Key, chọn ngôn ngữ đích, tùy chỉnh prompt AI, xem từ vựng đã lưu & xuất `.CSV` cho Anki, đổi ngôn ngữ giao diện). |
+| `⬇` | Tải phụ đề hiện tại xuống máy dưới dạng `.SRT` (Song ngữ / Ngoại ngữ / Bản dịch), `.VTT` hoặc `.TXT`. |
+| `🔄` | Xóa bộ nhớ tạm và dịch lại toàn bộ phụ đề của video hiện tại. |
+
+> **Mẹo (Tra từ trực tiếp):** Bấm vào bất kỳ từ nào trên phụ đề video để xem nghĩa & phiên âm, bấm `🔊` để nghe phát âm, hoặc bấm `☆` (`★`) để lưu vào sổ từ vựng.
 
 ## Cài đặt
 ### Từ trang Releases (Khuyên dùng)
