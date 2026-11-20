@@ -25,19 +25,20 @@ https://github.com/user-attachments/assets/a268ee68-5991-4e60-9e3d-34836ff29962
 
 ---
 
-## Tính năng chính
-- **Hỗ trợ YouTube & Bilibili**: Chỉ hoạt động trên các trang xem video (`youtube.com/watch`, `bilibili.com/video/*`, `bilibili.com/bangumi/play/*`). Toàn bộ bảng điều khiển nằm gọn trong Popup thanh công cụ và trang Dashboard (`options.html`).
-- **Xử lý phụ đề thông minh**: Tự động lọc thẻ thừa (`[Music]`, `♪`), nối các từ viết tắt bị cắt dòng, gộp mảnh câu ngắn thành câu hoàn chỉnh và ưu tiên dịch ngay đoạn đang phát.
-- **Đa trình dịch linh hoạt**:
-  - **Miễn phí không cần Key**: Google Translate (dịch ngữ cảnh & gộp POST), Bing / Microsoft Translator, MyMemory.
-  - **Mô hình AI (BYOK / Local)**: Google Gemini, Groq (Llama 3.3), Ollama (chạy offline vô hạn trên máy) và Custom API chuẩn OpenAI (OpenRouter, DeepSeek...).
-- **Công cụ học tập & Phím tắt**:
-  - Click vào bất kỳ từ nào trên phụ đề để tạm dừng, xem nghĩa, phiên âm, giải thích ngữ cảnh bằng AI, nghe phát âm (`🔊`) và lưu vào sổ Từ vựng (`☆` → xuất `.CSV` cho Anki).
-  - Phím tắt: `A` (Câu trước), `S` (Phát/Tạm dừng/Lặp lại), `D` (Câu sau), kèm chế độ **Tự dừng** và **Lặp câu**.
-- **Tùy chỉnh giao diện & Lyric Glow**: Tùy chỉnh cỡ chữ, màu chữ, độ mờ nền, vị trí từ đáy, độ rộng khung (tới 98%) và bật/tắt hiệu ứng phát sáng chạy từng từ **Lyric Glow** (mặc định tắt) với tốc độ tùy chỉnh (`0.5x–2.0x`).
-- **Cho video không có phụ đề**: Tạo phụ đề trực tiếp bằng **AI Whisper** (Groq / Local) và nạp file `.SRT` / `.VTT` từ máy tính.
-- **Xuất phụ đề**: Tải phụ đề trực tiếp về máy ở định dạng `.SRT` (Song ngữ / Chỉ gốc / Chỉ dịch), `.VTT` hoặc `.TXT`.
-- **Giao diện đa ngôn ngữ**: Hỗ trợ **Tiếng Việt**, **English** và **简体中文**.
+## Tính năng nổi bật
+- **Hỗ trợ YouTube & Bilibili**: Chỉ hoạt động trên trang xem video (`youtube.com/watch`, `bilibili.com/video/*`, `bilibili.com/bangumi/play/*`). Mọi điều khiển được gói gọn trong Popup thanh công cụ và Bảng điều khiển (`options.html`).
+- **Lời bài hát đồng bộ chuẩn (LRCLIB)**: Tải lời bài hát chính xác kèm mốc thời gian từ **LRCLIB** (miễn phí 100%, không cần API Key) chỉ với 1 bấm (`🎵`), hỗ trợ tìm bài thủ công và chỉnh lệch giờ tức thì (`-1s` / `-0.5s` / `0s` / `+0.5s` / `+1s`) cho MV có đoạn intro mà không cần dịch lại — khắc phục triệt để lỗi phụ đề tự động YouTube nghe nhầm lời nhạc.
+- **Xử lý phụ đề thông minh**: Tự động lọc ký tự `[Music]`/`♪`, nối lại các từ viết tắt bị tách rời, gộp đoạn ngắn thành câu tự nhiên dễ đọc và ưu tiên dịch ngay đoạn đang phát để hiển thị gần như tức thì.
+- **Đa dạng trình dịch**:
+  - **Miễn phí / Không cần Key**: Google Translate (dịch theo lô POST), Bing / Microsoft Translator, MyMemory.
+  - **Mô hình AI (BYOK / Local)**: Google Gemini, Groq (Llama 3.3), Ollama (chạy offline hoàn toàn trên máy), và API tương thích OpenAI (OpenRouter, DeepSeek...) đi kèm prompt tối ưu giúp AI tự hiểu ngữ cảnh và sửa lỗi nghe nhầm từ phụ đề tự động.
+- **Học ngoại ngữ tương tác & Phím tắt**:
+  - Bấm vào bất kỳ từ nào trên phụ đề để tự dừng video, tra nghĩa, xem phiên âm, giải thích ngữ cảnh bằng AI, nghe phát âm (`🔊`) và lưu vào sổ từ vựng (`☆` → xuất `.CSV` nạp vào Anki).
+  - Phím tắt: `A` (Câu trước), `S` (Phát/Dừng/Lặp lại), `D` (Câu sau), kèm chế độ **Tự dừng cuối câu** và **Lặp câu**.
+- **Tùy chỉnh giao diện & Hiệu ứng Lyric Glow**: Tùy chỉnh cỡ chữ, màu sắc, độ mờ nền, vị trí từ đáy, độ rộng tối đa (lên tới 98%) và bật hiệu ứng sáng từng chữ **Lyric Glow** (mặc định tắt) với tốc độ tùy chỉnh (`0.5x–2.0x`).
+- **Cho video không có phụ đề**: Tạo phụ đề trực tiếp bằng **AI Whisper** (Groq / Local) hoặc nạp file `.SRT`/`.VTT` từ máy.
+- **Xuất phụ đề**: Tải xuống trực tiếp dưới dạng `.SRT` (Song ngữ / Ngoại ngữ / Bản dịch), `.VTT`, hoặc `.TXT`.
+- **Đa ngôn ngữ giao diện**: Hỗ trợ **Tiếng Việt**, **English**, và **简体中文**.
 
 ## Cài đặt
 ### Từ trang Releases (Khuyên dùng)
