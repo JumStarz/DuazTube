@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>DuazTube Dashboard</title>
+  <link rel="icon" href="icon.svg" />
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body class="theme-starlight">
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <img src="icon.svg" alt="DuazTube" class="brand-logo" />
+      <div>
+        <div class="brand-name">DuazTube</div>
+        <div class="brand-ver">v2.0.2</div>
+      </div>
+    </div>
+
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="nav-search" data-i18n-placeholder="search_placeholder" placeholder="Tìm trong cài đặt" />
+    </div>
+
+    <nav class="nav-menu">
+      <div class="nav-group-label" data-i18n="nav_grp_general">CHUNG</div>
+      <button class="nav-item active" data-tab="overview"><span>✨</span> <span data-i18n="nav_overview">Tổng quan</span></button>
+      <button class="nav-item" data-tab="appearance"><span>🎨</span> <span data-i18n="nav_appearance">Giao diện phụ đề</span></button>
+
+      <div class="nav-group-label" data-i18n="nav_grp_services">DỊCH VỤ &amp; AI</div>
+      <button class="nav-item" data-tab="providers"><span>⚡</span> <span data-i18n="nav_providers">Cấu hình trình dịch</span></button>
+      <button class="nav-item" data-tab="prompts"><span>📜</span> <span data-i18n="nav_prompts">Lời nhắc AI (Prompt)</span></button>
+
+      <div class="nav-group-label" data-i18n="nav_grp_data">DỮ LIỆU</div>
+      <button class="nav-item" data-tab="srt"><span>📂</span> <span data-i18n="nav_srt">Nạp file .SRT / .VTT</span></button>
+      <button class="nav-item" data-tab="vocab"><span>⭐</span> <span data-i18n="nav_vocab">Từ vựng đã lưu</span></button>
+      <button class="nav-item" data-tab="backup"><span>💾</span> <span data-i18n="nav_backup">Sao lưu &amp; Khôi phục</span></button>
+      <button class="nav-item" data-tab="donate"><span>☕</span> <span data-i18n="nav_donate">Ủng hộ (Donate)</span></button>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <section id="tab-overview" class="tab-section active">
+      <h1 class="page-title" data-i18n="ov_title">Tổng quan</h1>
+      <p class="page-subtitle" data-i18n="ov_subtitle">Hành vi mặc định toàn cục và cài đặt chung</p>
+
+      <div class="overview-grid">
+        <div class="hero-card">
+          <div class="hero-top">
+            <div class="hero-icon">✦</div>
+            <div>
+              <div class="hero-title" data-i18n="ov_title">Tổng quan</div>
+              <div class="hero-desc" data-i18n="ov_hero_desc">Trạng thái dịch phụ đề YouTube &amp; tra từ ngữ cảnh</div>
+            </div>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-pill" id="pill-provider">
+              <div class="stat-label" data-i18n="ov_stat_provider">Dịch vụ dịch</div>
+              <div class="stat-value" id="ov-provider-name">Google Translate</div>
+            </div>
+            <div class="stat-pill">
+              <div class="stat-label" data-i18n="ov_stat_lang">Ngôn ngữ đích</div>
+              <div class="stat-value" id="ov-lang-name">AutoDetect → Tiếng Việt</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="shortcuts-card">
+          <div class="card-heading" data-i18n="ov_shortcuts">Phím tắt trên YouTube</div>
+          <div class="shortcut-row"><span data-i18n="sc_prev">Câu phụ đề trước</span><kbd>A</kbd></div>
+          <div class="shortcut-row"><span data-i18n="sc_play">Phát / Tạm dừng / Lặp lại</span><kbd>S</kbd></div>
+          <div class="shortcut-row"><span data-i18n="sc_next">Câu phụ đề tiếp theo</span><kbd>D</kbd></div>
+          <div class="shortcut-row"><span data-i18n="sc_click">Tra nghĩa &amp; Lưu từ vựng</span><kbd data-i18n="sc_click_key">Click từ</kbd></div>
+        </div>
+      </div>
+
+      <div class="quick-actions">
+        <button id="btn-quick-import" class="pill-btn" data-i18n="btn_import">⬆ Nhập</button>
+        <button id="btn-quick-export" class="pill-btn" data-i18n="btn_export">⬇ Xuất</button>
+        <a href="https://www.youtube.com" target="_blank" class="pill-btn" data-i18n="btn_open_yt">▶ Mở YouTube</a>
+      </div>
+
+      <div class="section-label" data-i18n="nav_grp_general">CHUNG</div>
+      <div class="settings-list">
+        <div class="setting-row">
+          <div>
+            <div class="setting-name" data-i18n="set_ui_lang">Ngôn ngữ giao diện</div>
+            <div class="setting-desc" data-i18n="set_ui_lang_desc">Ngôn ngữ hiển thị của Dashboard và Popup DuazTube</div>
+          </div>
+          <select id="opt-ui-lang" class="ctrl-select">
+            <option value="vi">Tiếng Việt</option>
+            <option value="en">English</option>
+            <option value="zh">简体中文</option>
+          </select>
+        </div>
+
+        <div class="setting-row">
+          <div>
+            <div class="setting-name" data-i18n="set_target_lang">Ngôn ngữ dịch đích</div>
+            <div class="setting-desc" data-i18n="set_target_lang_desc">Ngôn ngữ hiển thị ở dòng phụ đề dịch và popup tra từ</div>
+          </div>
+          <select id="opt-target-lang" class="ctrl-select">
+            <option value="vi">Tiếng Việt</option>
+            <option value="en">English</option>
+            <option value="ja">日本語</option>
+            <option value="ko">한국어</option>
+            <option value="zh-CN">简体中文</option>
+            <option value="fr">Français</option>
+          </select>
+        </div>
+
+        <div class="setting-row">
+          <div>
+            <div class="setting-name" data-i18n="set_theme">Chủ đề giao diện</div>
+            <div class="setting-desc" data-i18n="set_theme_desc">Chọn phong cách Starlight Night (Ánh Sao) hoặc Tối Hiện Đại</div>
+          </div>
+          <select id="opt-theme" class="ctrl-select">
+            <option value="starlight" data-i18n="theme_starlight">Starlight Night (Ánh Sao)</option>
+            <option value="classic" data-i18n="theme_classic">Tối Hiện Đại (Dark Classic)</option>
+          </select>
+        </div>
+
+        <div class="setting-row">
+          <div>
+            <div class="setting-name" data-i18n="set_hide_yt">Tự động ẩn phụ đề gốc của YouTube</div>
+            <div class="setting-desc" data-i18n="set_hide_yt_desc">Ẩn khung chữ mặc định của YouTube để tránh đè lên phụ đề song ngữ</div>
+          </div>
+          <select id="opt-hide-yt" class="ctrl-select">
+            <option value="true" data-i18n="btn_on">Bật</option>
+            <option value="false" data-i18n="btn_off">Tắt</option>
+          </select>
+        </div>
+
+        <div class="setting-row">
+          <div>
+            <div class="setting-name" data-i18n="set_merge">Tự động gộp các mảnh câu quá ngắn (1–2 từ)</div>
+            <div class="setting-desc" data-i18n="set_merge_desc">Giúp phụ đề tự động liền mạch hơn trước khi gửi đi dịch</div>
+          </div>
+          <select id="opt-merge-short" class="ctrl-select">
+            <option value="true" data-i18n="btn_on">Bật</option>
+            <option value="false" data-i18n="btn_off">Tắt</option>
+          </select>
+        </div>
+
+        <div class="setting-row">
+          <div>
+            <div class="setting-name" data-i18n="set_autopause">Mặc định tự động dừng sau mỗi câu</div>
+            <div class="setting-desc" data-i18n="set_autopause_desc">Hỗ trợ luyện nghe chép chính tả / shadowing khi mở video mới</div>
+          </div>
+          <select id="opt-auto-pause" class="ctrl-select">
+            <option value="false" data-i18n="btn_off">Tắt</option>
+            <option value="true" data-i18n="btn_on">Bật</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section id="tab-appearance" class="tab-section">
+      <h1 class="page-title" data-i18n="ap_page_title">Giao diện phụ đề</h1>
+      <p class="page-subtitle" data-i18n="ap_page_sub">Thay đổi áp dụng trực tiếp lên tất cả video YouTube đang mở</p>
+
+      <div class="preview-stage">
+        <div class="preview-badge" data-i18n="ap_preview_badge">Xem trước trực tiếp (Starlight)</div>
+        <div id="preview-overlay" class="preview-overlay">
+          <div id="pv-orig" class="pv-orig">Learning a new language opens up a whole new world.</div>
+          <div id="pv-trans" class="pv-trans">Học một ngôn ngữ mới sẽ mở ra cả một thế giới mới.</div>
+        </div>
+      </div>
+
+      <div class="settings-list">
+        <div class="setting-row">
+          <div>
+            <div class="setting-name" data-i18n="ap_display_mode">Chế độ hiển thị</div>
+            <div class="setting-desc" data-i18n="ap_mode_both">Song ngữ (Gốc + Bản dịch)</div>
+          </div>
+          <select id="ap-mode" class="ctrl-select">
+            <option value="both" data-i18n="ap_mode_both">Song ngữ (Gốc + Bản dịch)</option>
+            <option value="orig" data-i18n="ap_mode_orig">Chỉ hiển thị ngoại ngữ</option>
+            <option value="trans" data-i18n="ap_mode_trans">Chỉ hiển thị bản dịch</option>
+          </select>
+        </div>
+
+        <div class="setting-row">
+          <div>
+            <div class="setting-name"><span data-i18n="ap_orig_size_lbl">Cỡ chữ ngoại ngữ</span> (<span id="ap-orig-size-val">22px</span>)</div>
+            <div class="setting-desc" data-i18n="ap_orig_size_desc">Kích thước dòng phụ đề gốc phía trên</div>
+          </div>
+          <input type="range" id="ap-orig-size" min="14" max="36" step="1" class="ctrl-range" />
+        </div>
+
+        <div class="setting-row">
+          <div>
+            <div class="setting-name"><span data-i18n="ap_trans_size_lbl">Cỡ chữ bản dịch</span> (<span id="ap-trans-size-val">16px</span>)</div>
+            <div class="setting-desc" data-i18n="ap_trans_size_desc">Kích thước dòng phụ đề dịch phía dưới</div>
+          </div>
+          <input type="range" id="ap-trans-size" min="12" max="28" step="1" class="ctrl-range" />
+        </div>
+
+        <div class="setting-row">
+          <div>
+            <div class="setting-name" data-i18n="ap_colors_lbl">Màu chữ gốc &amp; Màu chữ bản dịch</div>
+            <div class="setting-desc" data-i18n="ap_colors_desc">Tùy chọn màu chữ dễ đọc theo sở thích</div>
+          </div>
+          <div class="color-pair">
+            <label><span data-i18n="ap_color_orig_short">Gốc</span> <input type="color" id="ap-orig-color" /></label>
+            <label><span data-i18n="ap_color_trans_short">Dịch</span> <input type="color" id="ap-trans-color" /></label>
+          </div>
+        </div>
+
+        <div class="setting-row">
+          <div>
+            <div class="setting-name"><span data-i18n="ap_opacity_lbl">Độ mờ nền khung phụ đề</span> (<span id="ap-opacity-val">82%</span>)</div>
+            <div class="setting-desc" data-i18n="ap_opacity_desc">Kéo về 0% để làm nền trong suốt hoàn toàn</div>
+          </div>
+          <input type="range" id="ap-opacity" min="0" max="95" step="5" class="ctrl-range" />
+        </div>
+
+        <div class="setting-row">
+          <div>
+            <div class="setting-name"><span data-i18n="ap_bottom_lbl">Khoảng cách từ đáy video</span> (<span id="ap-bottom-val">58px</span>)</div>
+            <div class="setting-desc" data-i18n="ap_bottom_desc">Điều chỉnh cao thấp để không che thanh điều khiển YouTube</div>
+          </div>
+          <input type="range" id="ap-bottom" min="10" max="200" step="4" class="ctrl-range" />
+        </div>
+
+        <div class="setting-row">
+          <div>
+            <div class="setting-name"><span data-i18n="ap_max_width_lbl">Độ rộng khung phụ đề</span> (<span id="ap-width-val">92%</span>)</div>
+            <div class="setting-desc" data-i18n="ap_max_width_desc">Tăng lên 95–98% để chứa được nhiều chữ trên 1 dòng hơn</div>
+          </div>
+          <input type="range" id="ap-max-width" min="40" max="98" step="2" class="ctrl-range" />
+        </div>
+      </div>
+
+        <div class="setting-row">
+          <div>
+            <div class="setting-name" data-i18n="ap_glow_lbl">Lyric Glow Effect</div>
+            <div class="setting-desc" data-i18n="ap_glow_desc">Highlight &amp; glow words dynamically</div>
+          </div>
+          <select id="ap-glow-mode" class="ctrl-select">
+            <option value="none" data-i18n="ap_glow_none" selected>Off</option>
+            <option value="lyric" data-i18n="ap_glow_spotify">Lyric Glow</option>
+            <option value="wave" data-i18n="ap_glow_wave">Lyric Glow + Wave</option>
+          </select>
+        </div>
+
+        <div class="setting-row">
+          <div>
+            <div class="setting-name"><span data-i18n="ap_glow_speed_lbl">Glow speed</span> (<span id="ap-glow-speed-val">1.0x</span>)</div>
+            <div class="setting-desc" data-i18n="ap_glow_speed_desc">Adjust animation speed</div>
+          </div>
+          <input type="range" id="ap-glow-speed" min="0.5" max="2.0" step="0.1" class="ctrl-range" />
+        </div>
+
+      <div class="action-bar">
+        <button id="ap-reset" class="pill-btn" data-i18n="ap_reset">↺ Khôi phục mặc định</button>
+      </div>
+    </section>
+
+    <section id="tab-providers" class="tab-section">
+      <h1 class="page-title" data-i18n="pv_page_title">Cấu hình dịch vụ &amp; AI</h1>
+      <p class="page-subtitle" data-i18n="pv_page_sub">Chọn trình dịch mặc định và thiết lập API Key cho mô hình AI</p>
+
+      <div class="settings-list" style="margin-bottom: 18px;">
+        <div class="setting-row">
+          <div>
+            <div class="setting-name" data-i18n="pv_active_lbl">Trình dịch đang sử dụng</div>
+            <div class="setting-desc" data-i18n="pv_active_desc">AI (Gemini, Groq, Ollama) sẽ đọc cả ngữ cảnh đoạn văn để dịch sát nghĩa nhất</div>
+          </div>
+          <select id="pv-provider" class="ctrl-select">
+            <option value="google">Google Translate</option>
+            <option value="microsoft">Bing / Microsoft</option>
+            <option value="mymemory">MyMemory</option>
+            <option value="gemini">AI Google Gemini</option>
+            <option value="groq">AI Groq Llama 3.3</option>
+            <option value="ollama">AI Ollama Local</option>
+            <option value="custom">AI Custom (OpenAI / OpenRouter)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="provider-cards">
+        <div class="provider-card">
+          <div class="pc-title">🌐 MyMemory</div>
+          <div class="pc-field"><label>Email (optional, 5,000 -> 50,000 chars/day)</label><input type="text" id="pv-mymemory-email" placeholder="example@gmail.com" /></div>
+        </div>
+        <div class="provider-card">
+          <div class="pc-title">✦ Google Gemini (aistudio.google.com)</div>
+          <div class="pc-grid">
+            <div class="pc-field"><label>API Key</label><input type="password" id="pv-gemini-key" placeholder="AIzaSy..." /></div>
+            <div class="pc-field"><label>Model</label><input type="text" id="pv-gemini-model" placeholder="gemini-2.5-flash" /></div>
+          </div>
+        </div>
+        <div class="provider-card">
+          <div class="pc-title">⚡ Groq Cloud (console.groq.com)</div>
+          <div class="pc-grid">
+            <div class="pc-field"><label>API Key</label><input type="password" id="pv-groq-key" placeholder="gsk_..." /></div>
+            <div class="pc-field"><label>Model</label><input type="text" id="pv-groq-model" placeholder="llama-3.3-70b-versatile" /></div>
+          </div>
+        </div>
+        <div class="provider-card">
+          <div class="pc-title">💻 Ollama Local</div>
+          <div class="pc-grid">
+            <div class="pc-field"><label>Base URL (OLLAMA_ORIGINS=*)</label><input type="text" id="pv-ollama-url" placeholder="http://localhost:11434" /></div>
+            <div class="pc-field"><label>Model</label><input type="text" id="pv-ollama-model" placeholder="qwen2.5:7b" /></div>
+          </div>
+        </div>
+        <div class="provider-card">
+          <div class="pc-title">🔌 Custom API (OpenAI-Compatible)</div>
+          <div class="pc-grid-3">
+            <div class="pc-field"><label>Endpoint URL</label><input type="text" id="pv-custom-url" placeholder="https://openrouter.ai/api/v1/chat/completions" /></div>
+            <div class="pc-field"><label>API Key</label><input type="password" id="pv-custom-key" placeholder="sk-..." /></div>
+            <div class="pc-field"><label>Model</label><input type="text" id="pv-custom-model" placeholder="google/gemini-2.0-flash-exp:free" /></div>
+          </div>
+        </div>
+        <div class="provider-card">
+          <div class="pc-title">🎙 AI Whisper (Speech-to-Text)</div>
+          <div class="pc-grid-3">
+            <div class="pc-field"><label>Mode</label><select id="pv-whisper-mode" class="ctrl-select" style="min-width:100%;"><option value="groq">Groq Whisper (Free with Groq Key)</option><option value="local">Local Whisper</option></select></div>
+            <div class="pc-field"><label>Video Speech Language</label><select id="pv-whisper-lang" class="ctrl-select" style="min-width:100%;"><option value="auto">Auto</option><option value="en">English (en)</option><option value="ja">Japanese (ja)</option><option value="ko">Korean (ko)</option><option value="zh">Chinese (zh)</option><option value="vi">Vietnamese (vi)</option></select></div>
+            <div class="pc-field"><label>Local URL</label><input type="text" id="pv-whisper-url" placeholder="http://localhost:8000/v1/audio/transcriptions" /></div>
+          </div>
+        </div>
+
+      <div class="action-bar">
+        <button id="btn-save-providers" class="primary-btn" data-i18n="pv_save_btn">💾 Lưu cấu hình dịch vụ</button>
+        <button id="btn-test-provider" class="pill-btn" data-i18n="pv_test_btn">🧪 Dịch thử câu mẫu</button>
+        <span id="test-result" class="test-result"></span>
+      </div>
+    </section>
+
+    <section id="tab-prompts" class="tab-section">
+      <h1 class="page-title" data-i18n="pr_page_title">Quản lý lời nhắc AI (Prompt)</h1>
+      <p class="page-subtitle" data-i18n="pr_page_sub">Tùy chỉnh cách AI dịch phụ đề</p>
+      <div class="provider-card">
+        <div class="pc-title" data-i18n="pr_box_title">Lời nhắc hệ thống (Dùng {{targetLang}} để chèn tên ngôn ngữ đích)</div>
+        <textarea id="pr-custom-prompt" rows="6" class="prompt-textarea"></textarea>
+        <div class="action-bar" style="margin-top: 12px; margin-bottom: 0;">
+          <button id="btn-save-prompt" class="primary-btn" data-i18n="pr_save_btn">💾 Lưu Prompt</button>
+          <button id="btn-reset-prompt" class="pill-btn" data-i18n="pr_reset_btn">↺ Xóa về mặc định</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="tab-srt" class="tab-section">
+      <h1 class="page-title" data-i18n="srt_page_title">Nạp phụ đề .SRT / .VTT</h1>
+      <p class="page-subtitle" data-i18n="srt_page_sub">Gắn file phụ đề từ máy tính vào video YouTube đang mở</p>
+      <div class="provider-card">
+        <div class="pc-title" data-i18n="srt_box_title">1. Chọn file .srt hoặc .vtt (hoặc dán nội dung phụ đề vào ô dưới)</div>
+        <div class="action-bar" style="margin-bottom: 12px;">
+          <input type="file" id="srt-file-input" accept=".srt,.vtt,.txt" />
+          <select id="srt-src-lang" class="ctrl-select"><option value="auto">Auto</option><option value="en">English (en)</option><option value="ja">Japanese (ja)</option><option value="ko">Korean (ko)</option><option value="zh-CN">Chinese (zh)</option></select>
+        </div>
+        <textarea id="srt-raw-text" rows="8" class="prompt-textarea"></textarea>
+        <div class="action-bar" style="margin-top: 12px; margin-bottom: 0;">
+          <button id="btn-apply-srt" class="primary-btn" data-i18n="srt_apply_btn">▶ Gắn vào tab YouTube đang mở</button>
+          <span id="srt-status" class="test-result"></span>
+        </div>
+      </div>
+    </section>
+
+    <section id="tab-vocab" class="tab-section">
+      <h1 class="page-title" data-i18n="vb_page_title">Từ vựng đã lưu</h1>
+      <p class="page-subtitle" data-i18n="vb_page_sub">Bấm biểu tượng ☆ khi tra từ trên video YouTube để lưu vào đây ôn tập</p>
+      <div class="action-bar" style="margin-bottom: 14px;">
+        <button id="btn-export-csv" class="pill-btn" data-i18n="vb_export_csv">⬇ Xuất CSV (Anki / Excel)</button>
+        <button id="btn-clear-vocab" class="pill-btn danger" data-i18n="vb_clear">🗑 Xóa toàn bộ</button>
+      </div>
+      <div id="vocab-list" class="vocab-list"></div>
+    </section>
+
+    <section id="tab-backup" class="tab-section">
+      <h1 class="page-title" data-i18n="bk_page_title">Sao lưu &amp; Khôi phục</h1>
+      <p class="page-subtitle" data-i18n="bk_page_sub">Xuất toàn bộ cài đặt, API Key, giao diện và từ vựng ra file JSON</p>
+      <div class="action-bar">
+        <button id="btn-export-json" class="primary-btn" data-i18n="bk_export">⬇ Tải xuống bản sao lưu (.json)</button>
+        <button id="btn-import-json" class="pill-btn" data-i18n="bk_import">⬆ Nhập từ file (.json)</button>
+        <input type="file" id="file-import" accept=".json" style="display: none;" />
+      </div>
+    </section>
+    <section id="tab-donate" class="tab-section">
+      <h1 class="page-title" data-i18n="dn_title">Ủng hộ tác giả</h1>
+      <p class="page-subtitle" data-i18n="dn_sub">DuazTube hoàn toàn miễn phí và mã nguồn mở. Nếu tiện ích giúp ích cho bạn, bạn có thể mời mình một ly cà phê!</p>
+
+      <div class="donate-wrap">
+        <div class="donate-hero">
+          <div class="donate-hero-icon">✦</div>
+          <div>
+            <div class="donate-hero-title" data-i18n="dn_banner_title">Cảm ơn bạn đã sử dụng DuazTube!</div>
+            <div class="donate-hero-desc" data-i18n="dn_banner_desc">Mọi sự ủng hộ dù nhỏ đều là động lực giúp mình duy trì và phát triển tiện ích mã nguồn mở này.</div>
+          </div>
+        </div>
+
+        <div class="donate-cards">
+          <a href="https://playerduo.net.vn/12897348" target="_blank" rel="noopener noreferrer" class="donate-card">
+            <div class="donate-icon pd">🎮</div>
+            <div>
+              <div class="donate-card-name">PlayerDuo</div>
+              <div class="donate-card-desc" data-i18n="dn_pd_desc">Ủng hộ nhanh tại Việt Nam (MoMo / ATM)</div>
+            </div>
+            <span class="donate-arrow">↗</span>
+          </a>
+
+          <a href="https://jumstar.gumroad.com/l/donate" target="_blank" rel="noopener noreferrer" class="donate-card">
+            <div class="donate-icon kf">🛍️</div>
+            <div>
+              <div class="donate-card-name">Gumroad</div>
+              <div class="donate-card-desc" data-i18n="dn_kf_desc">Mời một ly cà phê (PayPal / Thẻ)</div>
+            </div>
+            <span class="donate-arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" data-i18n="toast_saved">Đã lưu cài đặt!</div>
+  <script src="i18n.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
