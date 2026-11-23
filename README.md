@@ -62,10 +62,6 @@ DuazTube is live on the official **Firefox Add-ons Store** — just one click to
 - **No tracking, no data collection:** DuazTube never collects or sends your data to any third-party or developer server.
 - **Keys stay on your device:** Your AI API keys (Gemini, Groq, etc.) are saved locally in `storage.local` and only go straight to the provider you choose.
 
-## Support
-DuazTube is completely free and open-source. If it helps you learn or enjoy videos more, feel free to buy me a coffee:
-- 🎮 [PlayerDuo (Vietnam)](https://playerduo.net.vn/12897348) · ☕ [Gumroad (Global)](https://jumstar.gumroad.com/l/donate)
-
 ## Disclaimer
 DuazTube is an independent open-source project and isn't affiliated with YouTube, Bilibili, Google, Microsoft, or Mozilla. Please make sure your usage follows the terms of whichever translation API you pick.
 
