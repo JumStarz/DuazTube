@@ -62,10 +62,6 @@ DuazTube đã có mặt chính thức trên **Cửa hàng tiện ích Firefox Ad
 - **Không thu thập dữ liệu:** DuazTube không theo dõi hay gửi bất kỳ dữ liệu nào của bạn về máy chủ của tác giả.
 - **API Key lưu ngay trên máy bạn:** Các khóa API AI (Gemini, Groq...) chỉ nằm trong `storage.local` của trình duyệt và gửi thẳng tới nhà cung cấp bạn chọn.
 
-## Ủng hộ tác giả
-DuazTube hoàn toàn miễn phí và mã nguồn mở. Nếu tiện ích giúp việc học ngoại ngữ hoặc xem video của bạn thoải mái hơn, bạn có thể mời mình một ly cà phê tại:
-- 🎮 [PlayerDuo (Việt Nam)](https://playerduo.net.vn/12897348) · ☕ [Gumroad (Quốc tế)](https://jumstar.gumroad.com/l/donate)
-
 ## Lưu ý
 DuazTube là dự án mã nguồn mở độc lập, không liên kết với YouTube, Bilibili, Google, Microsoft hay Mozilla. Khi dùng các dịch vụ dịch thuật/AI, bạn nhớ tuân thủ điều khoản của nhà cung cấp tương ứng nhé.
 
