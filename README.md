@@ -2,7 +2,7 @@
 
 # ✦ DuazTube
 
-**Dual Subtitles, Synced Lyrics, Contextual Lookup & AI Translator for YouTube and Bilibili**
+**Dual subtitles, synced music lyrics, instant word lookup & AI translation for YouTube and Bilibili.**
 
 🌐 **English** | [Tiếng Việt](README.vi.md)
 
@@ -18,7 +18,7 @@
 ## Preview
 
 ### Lyric Glow & Dual Subtitles in Action
-> Word-by-word **Lyric Glow** highlight (off by default — enable anytime in **Subtitle Style 🎨**) with customizable speed (`0.5x–2.0x`), font sizes, colors, and clean Starlight layout.
+> Word-by-word **Lyric Glow** highlight (off by default — turn it on anytime under **Subtitle Style 🎨**) with adjustable speed (`0.5x–2.0x`), custom fonts/colors, and a clean Starlight look.
 
 
 
@@ -28,51 +28,46 @@ https://github.com/user-attachments/assets/dafef482-2be7-48c5-a160-2531abe5b9be
 
 ---
 
-## Popup & Player Controls Guide
+## Quick Controls & Icons
 
-| Button / Icon | Function |
+| Button / Icon | What it does |
 | :--- | :--- |
-| **DuazTube Logo** *(on video player bar)* | 1-click quick toggle to turn dual subtitles On/Off directly beside the `CC` (YouTube) or `字幕` (Bilibili) button. |
-| **On / Off** | Quickly show or hide the dual subtitle overlay on the video. |
-| **Auto-pause** | Automatically pauses the video at the end of every subtitle line (great for listening & shadowing). |
-| **Loop** | Continuously repeats the current subtitle line until turned off. |
-| `⏮ Prev (A)` / `⏯ Play/Replay (S)` / `Next (D) ⏭` | Jump to the previous/next line or play/pause/replay the current line (works with keyboard shortcuts `A`, `S`, `D`). |
-| `🎵` | Fetch accurate, time-synced song lyrics from **LRCLIB** (free, no key), search songs manually, and adjust timing offset (`-1s` / `-0.5s` / `0s` / `+0.5s` / `+1s`) for MVs with intros. |
-| `🎙 AI Sub` | Start/stop real-time **AI Whisper** speech-to-text for videos without subtitles. |
-| `📂` | Import a local `.SRT` or `.VTT` subtitle file from your computer. |
-| `🎨` | Customize subtitle appearance (Dual/Original/Translation mode, font sizes, colors, background opacity, bottom position, max width, and **Lyric Glow**). |
-| `⚙️` | Open the full Settings & Dashboard page (API keys, target language, custom AI prompt, saved vocabulary list & Anki `.CSV` export, UI language). |
-| `⬇` | Download the current subtitles as `.SRT` (Dual / Original / Translation), `.VTT`, or `.TXT`. |
-| `🔄` | Force re-translate all subtitles of the current video. |
+| **DuazTube Logo** *(on the video bar)* | Toggle dual subtitles On/Off in one click right next to the `CC` (YouTube) or `字幕` (Bilibili) button. |
+| **On / Off** | Show or hide the subtitle overlay from the popup. |
+| **Auto-pause** | Automatically pauses at the end of every line — super handy for listening and shadowing practice. |
+| **Loop** | Keeps repeating the current subtitle line until you turn it off. |
+| `⏮ Prev (A)` / `⏯ Play/Replay (S)` / `Next (D) ⏭` | Jump between lines or replay the current one (also works with keys `A`, `S`, `D`). |
+| `🎵` | Grab clean, time-synced song lyrics from **LRCLIB** (free, no key needed). Includes manual search and quick offset buttons (`-1s` / `-0.5s` / `0s` / `+0.5s` / `+1s`) for MVs with intros. |
+| `🎙 AI Sub` | Turn on live **AI Whisper** speech-to-text for videos that don't have captions. |
+| `📂` | Load your own `.SRT` or `.VTT` subtitle file from your PC. |
+| `🎨` | Tweak how subtitles look: dual/single mode, font size, colors, background opacity, position, width, and **Lyric Glow**. |
+| `⚙️` | Open the full Dashboard to set up API keys, target language, custom AI prompts, saved vocabulary (`.CSV` export for Anki), and UI language. |
+| `⬇` | Save the current subtitles as `.SRT` (Dual / Original / Translation), `.VTT`, or `.TXT`. |
+| `🔄` | Re-translate all subtitles for the current video. |
 
-> **Tip (On-video Dictionary):** Click any word directly on the subtitle to look it up, click `🔊` to hear pronunciation, or click `☆` (`★`) to save it to your Vocabulary list.
+> **Tip:** Click any word right on the subtitle to pause and look it up, hit `🔊` to hear how it's pronounced, or click `☆` (`★`) to save it to your vocabulary list.
 
 ## Installation
 
-### Firefox (Recommended — Official Store)
-Install directly from the **Firefox Add-ons Store**:
-- 👉 **[Install DuazTube on Firefox Add-ons](https://addons.mozilla.org/firefox/addon/duaztube/)**
+### Firefox
+DuazTube is live on the official **Firefox Add-ons Store** — just one click to install:
+- 👉 **[Get DuazTube on Firefox Add-ons](https://addons.mozilla.org/firefox/addon/duaztube/)**
 
-### Chrome / Edge / Brave / Cốc Cốc (Chromium)
-1. Download `Duaztube-chromium.zip` from the [Releases](https://github.com/JumStarz/DuazTube/releases) page and extract it.
-2. Open `chrome://extensions/` (or `edge://extensions/`) and enable **Developer mode**.
-3. Click **Load unpacked** and select the extracted `Duaztube-chromium` folder.
-
-### Manual / Developer Installation (Firefox)
-1. Clone this repository or download `Duaztube-firefox.zip` from [Releases](https://github.com/JumStarz/DuazTube/releases).
-2. Open `about:debugging#/runtime/this-firefox`.
-3. Click **Load Temporary Add-on...** and select `Duaztube-firefox/manifest.json`.
+### Chrome / Edge / Brave / Cốc Cốc
+1. Download `Duaztube-chromium.zip` from [Releases](https://github.com/JumStarz/DuazTube/releases) and unzip it.
+2. Go to `chrome://extensions/` (or `edge://extensions/`) and turn on **Developer mode**.
+3. Click **Load unpacked** and pick the extracted `Duaztube-chromium` folder.
 
 ## Privacy & Security
-- **Zero Data Collection**: DuazTube does **not** collect, track, or send user data to any developer-owned server.
-- **Local API Key Storage**: Your personal AI API keys (Gemini, Groq, etc.) are stored strictly locally in `storage.local` and sent only to the official provider endpoint you choose.
+- **No tracking, no data collection:** DuazTube never collects or sends your data to any third-party or developer server.
+- **Keys stay on your device:** Your AI API keys (Gemini, Groq, etc.) are saved locally in `storage.local` and only go straight to the provider you choose.
 
 ## Support
-DuazTube is 100% free and open-source. If you find it helpful, consider supporting its development:
+DuazTube is completely free and open-source. If it helps you learn or enjoy videos more, feel free to buy me a coffee:
 - 🎮 [PlayerDuo (Vietnam)](https://playerduo.net.vn/12897348) · ☕ [Gumroad (Global)](https://jumstar.gumroad.com/l/donate)
 
 ## Disclaimer
-DuazTube is an independent open-source educational tool and is not affiliated with YouTube, Bilibili, Google, Microsoft, or Mozilla. Users are responsible for complying with the terms of their chosen translation API providers.
+DuazTube is an independent open-source project and isn't affiliated with YouTube, Bilibili, Google, Microsoft, or Mozilla. Please make sure your usage follows the terms of whichever translation API you pick.
 
 ## License
-Licensed under the [MIT License](LICENSE).
+Released under the [MIT License](LICENSE).
